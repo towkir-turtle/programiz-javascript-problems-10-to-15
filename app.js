@@ -35,29 +35,56 @@ const largest2 = Math.max(num1, num2, num3);
 console.log(largest2);
 
 // Example-13: JavaScript Program to Check Prime Number
-function checkPrime(number) {
+function primeNumber(num) {
   let isPrime = true;
 
-  if (number == 1) {
-    console.log(" 1 is neither prime nor composite number");
-  } else if (number > 1) {
-    for (let i = 2; i < number; i++) {
-      if (number % i == 0) {
+  if (num === 1) {
+    console.log("1 is neither prime nor composite number");
+  } else if (num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % 2 == 0) {
         isPrime = false;
         break;
       }
     }
 
     if (isPrime) {
-      console.log(`${number} is a prime number`);
+      console.log(`${num} is a prime number`);
     } else {
-      console.log(`${number} is not a prime number`);
+      console.log(`${num} is not a prime number`);
     }
-  }
-  // check if number is less than 1
-  else {
-    console.log(`${number} is not a prime number`);
+  } else {
+    console.log(`${num} is not a prime number`);
   }
 }
 
-console.log(checkPrime(11));
+console.log(primeNumber(-9));
+
+// Example-14: JavaScript Program to Print All Prime Numbers in an Interval
+function printPrimeNumbers(lowerNumber, higherNumber) {
+  for (let i = lowerNumber; i <= higherNumber; i++) {
+    let flag = 0;
+
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) {
+        flag = 1;
+        break;
+      }
+    }
+
+    if (i > 1 && flag == 0) {
+      console.log(i);
+    }
+  }
+}
+console.log(printPrimeNumbers(2, 10));
+
+// Example-15: JavaScript Program to Find the Factorial of a Number
+function factorial(n) {
+  let fact = 1;
+  for (i = 1; i <= n; i++) {
+    fact = fact * i;
+  }
+  return fact;
+}
+console.log(factorial(5));
